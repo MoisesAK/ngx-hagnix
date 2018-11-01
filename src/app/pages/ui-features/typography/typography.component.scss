@@ -1,7 +1,18 @@
 @import '../../../@theme/styles/themes';
 
 @include nb-install-component() {
-
+  .bg_video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -10;
+    background: url('https://steamcdn-a.akamaihd.net/steam/apps/256691764/movie480.webm?t=1501574840');
+    background-size: cover;
+  }
   .font-secondary .font-header .name {
     font-size: 4.5rem;
     line-height: 4rem;
@@ -30,6 +41,7 @@
   .headings-card {
     nb-card-body {
       padding: 1rem 1.25rem;
+      z-index: 10;
     }
     .header {
       padding-bottom: 0.675rem;
@@ -50,6 +62,7 @@
     margin-bottom: 1rem;
     border-bottom: 1px solid nb-theme(separator);
     color: nb-theme(color-fg-heading);
+    z-index: 10;
 
     &:last-child {
       border-bottom: none;
@@ -124,5 +137,7 @@
 
   .bg-link {
     background: nb-theme(link-color);
+
+
   }
 }
