@@ -20,16 +20,44 @@
             <input type="text" placeholder="Endereço" class="form-control"/>
           </div>
           <div class="col-sm-6 input-group">
+            <input type="text" placeholder="Bairro" class="form-control"/>
+          </div>
+          <div class="col-sm-6 input-group">
             <input type="text" placeholder="Complemento" class="form-control"/>
           </div>
           <div class="col-sm-6 input-group">
             <input type="text" placeholder="Número" class="form-control"/>
           </div>
           <div class="col-sm-6 input-group">
+            <input type="checkbox" class="form-control"/>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Cadastro de Jogador</nb-card-header>
+      <nb-card-body>
+        <div class="row full-name-inputs">
+          <div class="col-sm-6 input-group">
             <input type="text" placeholder="Nick" class="form-control"/>
           </div>
           <div class="col-sm-6 input-group">
-            <input type="label" placeholder="" class="form-control"/>
+            <div class="item text-danger">
+              <div class="color bg-danger"></div>
+              <div>
+                <h5 class="text-danger">Nick já está sendo usado</h5>
+              </div>
+            </div>
+            <div class="item text-success">
+              <div class="color bg-success"></div>
+              <div>
+                <h5 class="text-success">Nick Disponível</h5>
+              </div>
+            </div>
           </div>
           <div class="col-sm-6 input-group">
             <input type="password" placeholder="Senha" class="form-control"/>

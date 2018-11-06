@@ -14,14 +14,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './modules/login/login.component';
+import {NbAlertModule} from '@nebular/theme';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    NbAlertModule,
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
