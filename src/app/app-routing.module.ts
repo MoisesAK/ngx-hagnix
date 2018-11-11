@@ -34,11 +34,11 @@ const routes: Routes = [
     ],
   },
   { path: 'index',
-    component: NbAuthComponent,
-    children: [{
+    component: IndexComponent,
+    /*children: [{
       path: '',
       component: IndexComponent
-    }],
+    }],*/
     pathMatch: 'full' },
   { path: '**', redirectTo: 'index' },
 ];
