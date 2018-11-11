@@ -19,7 +19,7 @@
             </div>
             <div class="col-sm-12">
               <button [disabled]="loading" nbButton class="btn-primary" type="submit">Entrar</button>
-              <div *ngIf="error" class="invalid-feedback">Usuário ou Senha inválidos!</div>
+              <div *ngIf="error && error.length > 0" class="invalid-feedback">Usuário ou Senha inválidos!</div>
             </div>
           </div>
         </form>

@@ -10,6 +10,8 @@ import {
 } from '@nebular/auth';
 import {LoginComponent} from './modules/login/login.component';
 import {AuthGuard} from './@core/guard/auth.guard';
+import {IndexComponent} from "./pages/index/index.component";
+import {NbAccordionComponent} from "@nebular/theme";
 
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule', canActivate: [AuthGuard] },
@@ -31,8 +33,14 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: 'index',
+    component: NbAuthComponent,
+    children: [{
+      path: '',
+      component: IndexComponent
+    }],
+    pathMatch: 'full' },
+  { path: '**', redirectTo: 'index' },
 ];
 
 const config: ExtraOptions = {
