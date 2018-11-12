@@ -5,6 +5,10 @@
 
 @include nb-install-component() {
 
+  #btnAlinhamento{
+    padding-left: 40%;
+  }
+
   nb-card-body {
     overflow: visible;
   }

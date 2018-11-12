@@ -1,10 +1,79 @@
-<div>
-  <header>
-    <p>
-      Header
-    </p>
-  </header>
-</div>
-<p>
-  index works!
-</p>
+<nb-layout [center]="false" windowMode>
+  <nb-layout-header fixed>
+  <img src="assets/images/pagina-inicial/logo.png" width="100px" id="imagem">
+    <div  class="irParaLogin" >
+      <a href="/#/auth/login "><button  nbButton class="btn-hero-primary" id="botaoParaLogar">Logar</button></a>
+    </div>
+    <div  class="irParaLogin" >
+      <a href="/#/auth/login "><button  nbButton class="btn-hero-primary" id="SobreNos">Sobre nós</button></a>
+    </div>
+  </nb-layout-header>
+  <nb-layout-column class="main-content">
+    <div class="row">
+      <div class="col-md-6 col-xxl-7">
+        <nb-card size="small">
+          <nb-card-header>
+            Hagnix Projeto: Realm of The Mad God
+          </nb-card-header>
+          <nb-card-body>
+            <div class="font-row font-secondary">
+              <div class="header">
+                <div class="name bold" style="font-size: medium">Sobre o Hagnix...</div>
+
+              </div>
+              <p>Somos alunos da graduação do primero semetre de Ciência da Computação e começamos esse projeto para
+                fins de aprendizado e domínio de novas tecnologias. O projeto se resume em desenvolvimento de BackEnd,
+                FrontEnd (Angular2), uso de tecnologias atuais de deploy como o Dockers e Kubernates para que o jogo
+                Realm of The Mad God rode de maneira confiável e com uma boa performance.
+              </p>
+            </div>
+          </nb-card-body>
+        </nb-card>
+
+        <nb-card size="small">
+          <nb-card-body>
+            <div class="font-row font-secondary">
+              <div class="header">
+                <div class="name bold" style="font-size: medium">Sobre Healm Of The Mad God...</div>
+
+              </div>
+              <p>Realm of the Mad God é um massivo RPG de ação cooperativo que te deixa no meio da luta em um
+                mundo dominado por monstros. O jogo apresenta jogabilidade cooperativa online em um enorme
+                “mundo ao vivo”, milhares de inimigos, combate em ação em tempo real, nivelamento, saque,
+                equipamento e magia. Não há downloads, instalações ou patches necessários.
+                Para mais informações é só acessar a <a href="https://www.realmeye.com/wiki/">wiki</a> do jogo.
+              </p>
+            </div>
+          </nb-card-body>
+        </nb-card>
+      </div>
+
+
+    <div class="col-md-6 col-xxl-5">
+        <nb-card size="medium" class="headings-card">
+          <nb-card-body>
+
+              <section id="section_video">
+                <div class="container">
+                  <video  id="video" autoplay loop controls muted>
+                    <source src="https://steamcdn-a.akamaihd.net/steam/apps/256691764/movie480.webm?t=1501574840" type="video/webm">
+                  </video>
+                </div>
+              </section>
+
+
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <ngx-footer></ngx-footer>
+  </nb-layout-footer>
+
+
+
+</nb-layout>
+
+

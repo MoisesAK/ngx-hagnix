@@ -17,8 +17,8 @@
                 <div *ngIf="f.password.errors.required">Informe a sua senha!</div>
               </div>
             </div>
-            <div class="col-sm-12">
-              <button [disabled]="loading" nbButton class="btn-primary" type="submit">Entrar</button>
+            <div class="col-sm-12 " id="btnAlinhamento">
+              <button  [disabled]="loading" nbButton class="btn-primary" type="submit">Entrar</button>
               <div *ngIf="error && error.length > 0" class="invalid-feedback">Usuário ou Senha inválidos!</div>
             </div>
           </div>
