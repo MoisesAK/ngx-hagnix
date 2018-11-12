@@ -17,6 +17,7 @@ import {delay, takeWhile, withLatestFrom} from "rxjs/operators";
     NbCardModule,
     ThemeModule,
     NbLayoutModule,
+
   ],
   declarations: [IndexComponent],
   exports: [IndexComponent]

@@ -18,6 +18,7 @@ import { LoginComponent } from './modules/login/login.component';
 import {NbAlertModule} from '@nebular/theme';
 import { ErrorInterceptor, JwtInterceptor } from './@core/data/interceptors';
 import {IndexModule} from "./pages/index/index.module";
+import {GamePageModule} from "./pages/game-page/game-page.module";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -28,6 +29,7 @@ import {IndexModule} from "./pages/index/index.module";
     AppRoutingModule,
     NbAlertModule,
     IndexModule,
+    GamePageModule,
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),

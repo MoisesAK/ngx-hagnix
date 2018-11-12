@@ -12,9 +12,16 @@ import {LoginComponent} from './modules/login/login.component';
 import {AuthGuard} from './@core/guard/auth.guard';
 import {IndexComponent} from "./pages/index/index.component";
 import {LoginGuard} from "./@core/guard/login.guard";
+import {GamePageComponent} from "./pages/game-page/game-page.component";
+
 
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule', canActivate: [AuthGuard] },
+  {
+    path: 'game',
+    component: GamePageComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'auth',
     component: NbAuthComponent,
@@ -42,6 +49,7 @@ const routes: Routes = [
       component: IndexComponent
     }],*/
     pathMatch: 'full' },
+
   { path: '**', redirectTo: 'index' },
 ];
 
