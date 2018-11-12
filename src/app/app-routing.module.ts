@@ -11,7 +11,7 @@ import {
 import {LoginComponent} from './modules/login/login.component';
 import {AuthGuard} from './@core/guard/auth.guard';
 import {IndexComponent} from "./pages/index/index.component";
-import {NbAccordionComponent} from "@nebular/theme";
+import {LoginGuard} from "./@core/guard/login.guard";
 
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule', canActivate: [AuthGuard] },
@@ -22,10 +22,12 @@ const routes: Routes = [
       {
         path: '',
         component: LoginComponent,
+        canActivate: [LoginGuard]
       },
       {
         path: 'login',
         component: LoginComponent,
+        canActivate: [LoginGuard]
       },
       {
         path: 'logout',

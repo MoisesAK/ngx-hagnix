@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'pages/dashboard';
 
     this.loginForm = this.formBuilder.group({
       identifier: ['', Validators.required],
@@ -42,12 +42,15 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  get f() { return this.loginForm.controls; }
+  get f() {
+    return this.loginForm.controls;
+  }
 
   onSubmit() {
     this.submitted = true;
     this.loading = true;
 
+    console.log(this.authenticationService);
     this.authenticationService.login(this.f.identifier.value, this.f.password.value)
       .pipe(first())
       .subscribe(

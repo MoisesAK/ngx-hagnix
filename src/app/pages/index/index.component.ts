@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {NbSpinnerService} from "@nebular/theme";
+import {Router, RouterState} from "@angular/router";
 
 @Component({
   selector: 'ngx-index',
@@ -8,7 +8,10 @@ import {NbSpinnerService} from "@nebular/theme";
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  logged = localStorage.getItem('currentUser');
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     //Removendo Spinner ao Carregar página
@@ -17,6 +20,10 @@ export class IndexComponent implements OnInit {
     if (div) {
       div.style['display'] = 'none';
     }
+  }
+
+  navigate(link: string){
+    this.router.navigate([link]);
   }
 
 }
