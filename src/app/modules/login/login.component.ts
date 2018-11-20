@@ -1,7 +1,5 @@
-import {Component, NgModule, OnInit} from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
+import {ChangeDetectorRef, Component, NgModule, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {NbAuthService, NbAuthSocialLink} from '@nebular/auth';
 import {AppComponent} from '../../app.component';
 import {NbAlertModule} from '@nebular/theme';
 import {AuthenticationService} from "../../@core/data/authentication.service";
@@ -49,17 +47,17 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.loading = true;
+    const ref = this;
 
-    console.log(this.authenticationService);
     this.authenticationService.login(this.f.identifier.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
         },
-        error => {
-          this.error = error;
-          this.loading = false;
+        (errors) => {
+          ref.error = errors.statusText;
+          ref.loading = false;
         });
   }
 

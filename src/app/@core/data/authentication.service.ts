@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import {Config} from "./config";
 import {User} from "./models/user";
+import * as jwt_decode from "jwt-decode"
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -19,13 +20,9 @@ export class AuthenticationService {
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
+                    this.user = jwt_decode(user.token);
+                    this.resolve(user);
                 }
-
-                this.user = user.user;
-
-                new Promise(e => {
-                  this.resolve(user);
-                });
 
                 return user;
             }));
@@ -53,6 +50,15 @@ export class AuthenticationService {
 
   getUser(): Promise<User> {
     return new Promise<User>((resolve, reject) => {
+      const local = localStorage.getItem('currentUser');
+      if(local){
+        const user = JSON.parse(local);
+
+        this.user = jwt_decode(user.token);
+        resolve(user);
+        return;
+      }
+
       if(!this.user)
         this.resolve = resolve;
       else

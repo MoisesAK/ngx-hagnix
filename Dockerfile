@@ -13,11 +13,16 @@ FROM nginx:1.13.9-alpine
 # copy artifact build from the 'build environment'
 COPY --from=Builder /app/dist /usr/share/nginx/html
 
+ENV BASE_URL=http://localhost:3000
+
+WORKDIR /app
+
+COPY /docker/start.sh .
+
 # expose port 80
 EXPOSE 80
 
-# run nginx
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["sh", "./start.sh"]
 
 
 

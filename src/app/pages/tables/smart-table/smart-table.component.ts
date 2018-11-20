@@ -63,7 +63,7 @@ export class SmartTableComponent {
   constructor(private service: UserManagementService) {
     this.service.getUsers(0,5)
       .then(user => {
-        this.source.load(user.map(u => { return {id: u.id, email: u.email, firstName: u.name} }))
+        this.source.load(user.map(u => { return {id: u.email, email: u.email, firstName: u.name} }))
       })
       .catch(error => console.log(error));
   }

@@ -8,16 +8,10 @@ export enum Roles {
 }
 
 export interface User {
-  id?: string
-  name: string,
-  CPF: string,
-  CEP: string,
-  bairro: string,
-  street: string,
-  password: string,
-  house: string,
-  complement: string,
+  email: String,
+  identifier: String,
+  refreshToken: boolean
   admin: boolean,
-  roles:Array<Roles>,
-  email: string
+  name: String,
+  roles: Array<Roles>
 }

@@ -20,7 +20,8 @@ const routes: Routes = [
   {
     path: 'game',
     component: GamePageComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
   },
   {
     path: 'auth',
@@ -44,12 +45,8 @@ const routes: Routes = [
   },
   { path: 'index',
     component: IndexComponent,
-    /*children: [{
-      path: '',
-      component: IndexComponent
-    }],*/
-    pathMatch: 'full' },
-
+    pathMatch: 'full'
+  },
   { path: '**', redirectTo: 'index' },
 ];
 

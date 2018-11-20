@@ -16,8 +16,7 @@ export class GamePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    const div = document.getElementById("nb-global-spinner")
-    console.log(div)
+    const div = document.getElementById("nb-global-spinner");
     if (div) {
       div.style['display'] = 'none';
     }

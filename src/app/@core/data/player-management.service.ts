@@ -8,7 +8,8 @@ export interface Player {
   admin: boolean,
   token: number,
   gold: number,
-  password: String
+  password: String,
+  banned: boolean
 }
 
 @Injectable()

@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.getUser().then(e => this.user = e.name);
+    this.authService.getUser().then(e => this.user = e);
   }
 
   toggleSidebar(): boolean {

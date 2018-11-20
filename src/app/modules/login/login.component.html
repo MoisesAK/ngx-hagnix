@@ -6,20 +6,14 @@
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
           <div class="row full-name-inputs">
             <div class="col-sm-12 input-group">
-              <input type="text" formControlName="identifier" placeholder="CPF ou E-mail" class="form-control"/>
-              <div *ngIf="submitted && f.identifier.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">CPF ou E-mail devem ser informado!</div>
-              </div>
+              <input type="text" formControlName="identifier" [required]="true" placeholder="CPF ou E-mail" class="form-control"/>
             </div>
             <div class="col-sm-12 input-group">
-              <input type="password" formControlName="password" placeholder="Senha" class="form-control"/>
-              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Informe a sua senha!</div>
-              </div>
+              <input type="password" formControlName="password" [required]="true" placeholder="Senha" class="form-control"/>
             </div>
-            <div class="col-sm-12 " id="btnAlinhamento">
-              <button  [disabled]="loading" nbButton class="btn-primary" type="submit">Entrar</button>
-              <div *ngIf="error && error.length > 0" class="invalid-feedback">Usuário ou Senha inválidos!</div>
+            <div class="col-sm-12">
+              <div *ngIf="error" style="text-align: center;"><nb-card><nb-card-body>Usuário ou Senha inválidos!</nb-card-body></nb-card></div>
+              <div id="btnAlinhamento"><button [disabled]="loading" nbButton class="btn-primary" type="submit">Entrar</button></div>
             </div>
           </div>
         </form>
